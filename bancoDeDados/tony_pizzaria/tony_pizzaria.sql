@@ -1,10 +1,10 @@
-drop database tony_pizzaria;
+drop database Babuino_pizzaria;
 
-create database tony_pizzaria;
+create database Babuino_pizzaria;
 
-use tony_pizzaria;
+use Babuino_pizzaria;
 
-create table tonyPizzaria(
+create table BabuinoPizzaria(
 	idPizzaria int primary key not null,
     nome varchar(100),
     cnpj numeric(14),
@@ -22,7 +22,7 @@ create table usuarios(
     email varchar(100),
     link_img_perfil varchar(1000),
     
-    foreign key (idPizzaria) references tonyPizzaria(idPizzaria)
+    foreign key (idPizzaria) references BabuinoPizzaria(idPizzaria)
 );
 
 create table enderecos(
@@ -90,8 +90,8 @@ create table pagamentos(
 	foreign key (idPedido) references pedidos(idPedido)
 );
 
-insert into tonyPizzaria (idPizzaria, nome, cnpj, email, telefone)values
-(1,'Tony Pizzaria - Novo Hamburgo', 46854138485546, 'tonypizzaria@gmail.com', 55011915348532);
+insert into BabuinoPizzaria (idPizzaria, nome, cnpj, email, telefone)values
+(1,'Babuino Pizzaria - Novo Hamburgo', 46854138485546, 'Babuinopizzaria@gmail.com', 55011915348532);
 
 insert into usuarios(idUsuario, idPizzaria, nome, telefone, cpf, senha, email, link_img_perfil)values
 (0, 1, "Luiz Henrique Vidal Araujo", 5511961659165, 57681653133, "dez_13/12", "luizhva@gmail.com", ""),
